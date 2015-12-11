@@ -9,7 +9,7 @@ describe "Ahorcado" do
 	it "should be Palabra" do
 		ahorcado = Ahorcado.new
 		p = ahorcado.palabra()
-		expect(p).to eq("palabra")
+		expect(p).to eq("palabras")
 	end
 
 	it "should be cantidad" do
