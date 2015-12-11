@@ -7,3 +7,6 @@ Feature: Inicio
 		Given inicio la aplicacion
 		Then ver "Start"
 
+	Scenario: Presiono start
+		Given Presionar Start
+		Then ver "PALABRA"

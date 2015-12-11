@@ -6,4 +6,18 @@ describe "Ahorcado" do
 		inicio = ahorcado.init()		
 		expect(inicio).to eq("Ahorcado")	
 	end
+	it "should be Palabra" do
+		ahorcado = Ahorcado.new
+		p = ahorcado.palabra()
+		expect(p).to eq("palabra")
+	end
+
+	it "should be cantidad" do
+        @@palabra= "aaa"
+        @@letra = "a"
+		ahorcado = Ahorcado.new
+		p = ahorcado.validar()
+		expect(p).to eq(3)
+	end
+
 end
