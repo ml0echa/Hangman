@@ -15,6 +15,10 @@ describe "Ahorcado" do
 	it "should be cantidad" do
         @@palabra= "aaa"
         @@letra = "a"
+		@@letrasUsadas = ""
+		@@arregloLetras = @@palabra.split("")
+  @@arregloBool = []
+  @@arregloLetras.each{@@arregloBool.push false}
 		ahorcado = Ahorcado.new
 		p = ahorcado.validar()
 		expect(p).to eq(3)
