@@ -1,0 +1,71 @@
+<html>
+	<body>
+		<h1 align="center">Ahorcado</h1>
+		<form action="/validar" method="POST">
+			<table border="0" width="100%" rowspan="10">
+				<tr>
+					<td>
+						<table border="0" width="50%" align="center">
+							<tr >
+				<%  (0..@@arregloLetras.length).each do |e| %>
+				<% if @@arregloBool[e] then %>
+			<td style="border-bottom:1pt solid black;align='center'"><%=@@arregloLetras[e]%></td>
+				<% else %>
+			<td style="border-bottom:1pt solid black;align='center'">&nbsp;</td>
+				<%end %>
+					<% end %>
+							</tr>
+					</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="0" width="20%" align="left">
+							<tr>
+								<td>Número de Intentos:</td>
+								<td><%=@@Intentos%></td>
+							</tr>
+							<tr>
+								<td>Letras Usadas:</td>
+								<td><%=@@letrasUsadas%></td>					
+							</tr>
+							<tr>
+							<% if @@Intentos > 0 then%>
+								<td>Letra : <input type="text" id="txtInt" name="txtInt" value=""/> </td>		
+							<% end %>
+							</tr>
+							<tr>
+								<td>Letra valida :  
+
+<% if @@encontrado > 0 then
+   %>  Letra Valida
+<% else  %> Letra NO Valida
+<% end  %>
+</td>		
+
+	
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<table>
+			<tr>
+				<td>
+					<table border="0" width="50%" align="left">
+						<tr>
+							<td>
+							<% if @@Intentos == 0 then%>
+								<form action="/" method="GET">
+									<input type="submit" value="Reiniciar" name="Reiniciar"/>
+								</form>
+							<% end %>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
